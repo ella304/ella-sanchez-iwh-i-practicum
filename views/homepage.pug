@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1 Video Game Characters
+    a(href="/update-cobj") Add to this table
+
+    if characters && characters.length > 0
+      table
+        thead
+          tr
+            th Name
+            th Game
+            th Ability
+        tbody
+          each character in characters
+            tr
+              td= character.properties.name
+              td= character.properties.game
+              td= character.properties.ability
+    else
+      p No characters found. Add one above!
